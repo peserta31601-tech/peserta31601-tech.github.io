@@ -1,0 +1,747 @@
+/* ==================================================
+   MAPLE - STYLE
+   Math Puzzle Learning Experience
+   ================================================== */
+
+
+/* ==================================================
+   1. RESET & GLOBAL
+   ================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #e3f2fd 0%,
+            #f5f9ff 45%,
+            #eef2f7 100%
+        );
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #263238;
+}
+
+
+/* ==================================================
+   2. MAIN CONTAINER
+   ================================================== */
+
+.container {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    margin: auto;
+}
+
+
+/* ==================================================
+   3. HEADER / BRANDING
+   ================================================== */
+
+.header {
+
+    text-align: center;
+
+    margin-bottom: 24px;
+}
+
+.header h1 {
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: #1565c0;
+
+    margin-bottom: 6px;
+}
+
+.header p {
+
+    font-size: 14px;
+
+    color: #607d8b;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* ==================================================
+   4. CARD
+   ================================================== */
+
+.card {
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    margin-bottom: 16px;
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.08);
+
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+
+/* ==================================================
+   5. LABEL
+   ================================================== */
+
+.card label {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #455a64;
+}
+
+
+/* ==================================================
+   6. LEVEL SELECTOR
+   ================================================== */
+
+#level {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    border: 2px solid #d7e0e8;
+
+    background: #ffffff;
+
+    color: #263238;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    outline: none;
+
+    appearance: auto;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#level:focus {
+
+    border-color: #1976d2;
+
+    box-shadow:
+        0 0 0 3px rgba(25, 118, 210, 0.12);
+}
+
+
+/* ==================================================
+   7. SECRET CODE INPUT
+   ================================================== */
+
+#secretCode {
+
+    width: 100%;
+
+    padding: 15px 16px;
+
+    border-radius: 12px;
+
+    border: 2px solid #d7e0e8;
+
+    background: #ffffff;
+
+    color: #263238;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    outline: none;
+
+    margin-bottom: 16px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#secretCode::placeholder {
+
+    color: #9eabb3;
+
+    font-size: 14px;
+
+    letter-spacing: 0;
+}
+
+#secretCode:focus {
+
+    border-color: #1976d2;
+
+    box-shadow:
+        0 0 0 3px rgba(25, 118, 210, 0.12);
+}
+
+
+/* ==================================================
+   8. BUTTON
+   ================================================== */
+
+button {
+
+    width: 100%;
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 14px 18px;
+
+    background: #1976d2;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+button:hover {
+
+    background: #1565c0;
+
+    box-shadow:
+        0 6px 14px rgba(25, 118, 210, 0.22);
+}
+
+button:active {
+
+    transform: scale(0.98);
+}
+
+button:disabled {
+
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    box-shadow: none;
+}
+
+
+/* ==================================================
+   9. MESSAGE / FEEDBACK
+   ================================================== */
+
+#message {
+
+    min-height: 26px;
+
+    margin: 8px 4px 14px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+#message.error {
+
+    color: #d32f2f;
+}
+
+#message.success {
+
+    color: #2e7d32;
+}
+
+#message.loading {
+
+    color: #1976d2;
+}
+
+
+/* ==================================================
+   10. RESULT CARD
+   ================================================== */
+
+#result .card {
+
+    text-align: center;
+
+    animation:
+        resultAppear 0.35s ease;
+}
+
+#title {
+
+    margin-bottom: 6px;
+
+    font-size: 23px;
+
+    line-height: 1.3;
+
+    color: #1565c0;
+}
+
+#subtitle {
+
+    margin-bottom: 16px;
+
+    color: #607d8b;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+   11. CULTURAL IMAGE
+   ================================================== */
+
+#image {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ==================================================
+   12. NEXT BUTTON
+   ================================================== */
+
+#nextButton {
+
+    background: #43a047;
+}
+
+#nextButton:hover {
+
+    background: #388e3c;
+
+    box-shadow:
+        0 6px 14px rgba(67, 160, 71, 0.22);
+}
+
+
+/* ==================================================
+   13. ANIMATION
+   ================================================== */
+
+@keyframes resultAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(12px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* ==================================================
+   14. MOBILE
+   ================================================== */
+
+@media (max-width: 480px) {
+
+    body {
+
+        padding: 16px;
+
+        align-items: flex-start;
+
+        padding-top: 40px;
+    }
+
+    .header h1 {
+
+        font-size: 30px;
+    }
+
+    .card {
+
+        padding: 20px;
+
+        border-radius: 16px;
+    }
+
+    #secretCode {
+
+        font-size: 17px;
+    }
+
+}
+
+
+/* ==================================================
+   15. VERY SMALL SCREEN
+   ================================================== */
+
+@media (max-width: 350px) {
+
+    body {
+
+        padding: 12px;
+
+        padding-top: 25px;
+    }
+
+    .header h1 {
+
+        font-size: 27px;
+    }
+
+    .card {
+
+        padding: 17px;
+    }
+
+}
+
+
+/* ==================================================
+   16. FULL SCREEN RESULT
+   ================================================== */
+
+#result {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+
+    height: 100vh;
+    height: 100dvh;
+
+    z-index: 1000;
+
+    display: none;
+
+    overflow-y: auto;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #e3f2fd 0%,
+            #f5f9ff 45%,
+            #eef2f7 100%
+        );
+
+    padding: 30px 20px;
+
+}
+
+
+/* ==================================================
+   17. RESULT CONTENT
+   ================================================== */
+
+#result .card {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    min-height: calc(100vh - 60px);
+    min-height: calc(100dvh - 60px);
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    padding: 20px;
+
+}
+
+
+/* ==================================================
+   18. RESULT TITLE
+   ================================================== */
+
+#result .success-title {
+
+    font-size: 42px;
+
+    font-weight: 800;
+
+    margin-bottom: 10px;
+
+    color: #1565c0;
+
+}
+
+
+/* ==================================================
+   19. LEVEL MESSAGE
+   ================================================== */
+
+#result .level-message {
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: #607d8b;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* ==================================================
+   20. CULTURAL TITLE
+   ================================================== */
+
+#title {
+
+    font-size: 32px;
+
+    line-height: 1.25;
+
+    color: #263238;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* ==================================================
+   21. SUBTITLE
+   ================================================== */
+
+#subtitle {
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    color: #607d8b;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* ==================================================
+   22. IMAGE
+   ================================================== */
+
+#image {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 650px;
+
+    max-height: 55vh;
+
+    object-fit: contain;
+
+    border-radius: 20px;
+
+    margin: 0 auto 30px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.18);
+
+}
+
+
+/* ==================================================
+   23. NEXT BUTTON
+   ================================================== */
+
+#nextButton {
+
+    width: 100%;
+
+    max-width: 400px;
+
+    padding: 16px 24px;
+
+    border-radius: 14px;
+
+    background: #43a047;
+
+    font-size: 18px;
+
+}
+
+
+/* ==================================================
+   24. MOBILE RESULT
+   ================================================== */
+
+@media (max-width: 480px) {
+
+    #result {
+
+        padding: 20px 15px;
+
+    }
+
+    #result .card {
+
+        min-height: calc(100vh - 40px);
+        min-height: calc(100dvh - 40px);
+
+        padding: 10px;
+
+    }
+
+    #result .success-title {
+
+        font-size: 32px;
+
+    }
+
+    #title {
+
+        font-size: 26px;
+
+    }
+
+    #subtitle {
+
+        font-size: 15px;
+
+    }
+
+    #image {
+
+        max-height: 48vh;
+
+        border-radius: 16px;
+
+    }
+
+}
+
+
+/* ==================================================
+   25. RESULT SHOW ANIMATION
+   ================================================== */
+
+#result.show {
+
+    animation:
+        resultFadeIn 0.4s ease;
+}
+
+
+@keyframes resultFadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(1.02);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+}

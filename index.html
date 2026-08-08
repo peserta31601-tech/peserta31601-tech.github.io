@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MAPLE</title>
+
+    <!-- MAPLE CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <!-- =========================================
+             HEADER
+             ========================================= -->
+
+        <div class="header">
+
+            <h1>🧩 MAPLE</h1>
+
+            <p>
+                Math Puzzle Learning Experience
+            </p>
+
+        </div>
+
+
+        <!-- =========================================
+             LEVEL SELECTOR
+             ========================================= -->
+
+        <div class="card">
+
+            <label for="level">
+                Pilih Level
+            </label>
+
+            <select id="level">
+
+                <option value="1">
+                    Level 1
+                </option>
+
+                <option value="2">
+                    Level 2
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- =========================================
+             SECRET CODE
+             ========================================= -->
+
+        <div class="card">
+
+            <label for="secretCode">
+                Secret Code
+            </label>
+
+            <input
+                type="text"
+                id="secretCode"
+                placeholder="Masukkan kode..."
+                autocomplete="off"
+                autocapitalize="characters"
+                spellcheck="false"
+            >
+
+            <button id="unlockButton">
+                🔓 UNLOCK
+            </button>
+
+        </div>
+
+
+        <!-- =========================================
+             MESSAGE / FEEDBACK
+             ========================================= -->
+
+        <div id="message"></div>
+
+
+    </div>
+
+
+    <!-- =============================================
+         RESULT
+         ============================================= -->
+
+    <div id="result">
+
+        <div class="card">
+
+            <div class="success-title">
+                🎉 SELAMAT!
+            </div>
+
+            <div class="level-message">
+                Level berhasil dibuka
+            </div>
+
+            <h2 id="title"></h2>
+
+            <p id="subtitle"></p>
+
+            <img
+                id="image"
+                alt="Gambar budaya"
+            >
+
+            <button id="nextButton">
+                ➡ NEXT LEVEL
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAPLE JAVASCRIPT -->
+    <script
+        src="script.js"
+        defer
+    ></script>
+
+</body>
+
+</html>
