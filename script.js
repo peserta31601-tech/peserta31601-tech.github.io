@@ -18,7 +18,7 @@ const levels = {
         subtitle:
             "Selamat! Kamu berhasil membuka Level 1.",
 
-        image: "",
+        image: "assets/images/test.jpg",
 
         next: 2
     },
