@@ -18,7 +18,7 @@ const levels = {
         subtitle:
             "Selamat! Kamu berhasil membuka Level 1.",
 
-        image: "assets/images/test.jpg",
+        image: "assets/images/rasyid-maulana-yVwiHXoTrnU-unsplash.webp",
 
         next: 2
     },
