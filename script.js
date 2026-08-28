@@ -10,7 +10,7 @@ const mapleData = [
       "level_2": "assets/images/wirawiri02.webp"
     },
     "keterangan": {
-      "level_1": {
+      "level_2": {
         "hook": "Tau Gak Sih? Kebun Binatang Surabaya Ternyata Berawal dari Hobi Mengoleksi Hewan!",
         "content": {
           "pembuka": "Kebun Binatang Surabaya (KBS) yang sering kita kunjungi sekarang ternyata punya sejarah super unik! Semua berawal di tahun 1916 dari seorang jurnalis bernama H.F.K. Kommer.",
@@ -22,7 +22,7 @@ const mapleData = [
           ]
         }
       },
-      "level_2": {
+      "level_1": {
         "hook": "Gagah dan Energik! Yuk, Kenalan sama Tari Remo Khas Jawa Timur",
         "content": {
           "pembuka": "Pernah lihat tarian tradisional yang gerakan kakinya bikin panggung berguncang dan penuh bunyi gemerincing? Yup, itu dia Tari Remo!",
