@@ -1,3 +1,4 @@
+
 /* ==================================================
    MAPLE - STYLE
    Math Puzzle Learning Experience
@@ -133,7 +134,7 @@ body {
    6. LEVEL SELECTOR
    ================================================== */
 
-#level {
+.select {
 
     width: 100%;
 
@@ -162,7 +163,7 @@ body {
         box-shadow 0.2s ease;
 }
 
-#level:focus {
+.select:focus {
 
     border-color: #1976d2;
 
@@ -482,35 +483,31 @@ button:disabled {
    16. FULL SCREEN RESULT
    ================================================== */
 
+/* Container Modal Modern */
 #result {
-
     position: fixed;
-
     inset: 0;
-
-    width: 100vw;
-
-    height: 100vh;
-    height: 100dvh;
-
-    z-index: 1000;
-
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(8px);
     display: none;
-
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
     overflow-y: auto;
-
-    background:
-        radial-gradient(
-            circle at top,
-            #e3f2fd 0%,
-            #f5f9ff 45%,
-            #eef2f7 100%
-        );
-
-    padding: 30px 20px;
-
 }
 
+.result-dialog {
+    background: #ffffff;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: popUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
 
 /* ==================================================
    17. RESULT CONTENT
@@ -723,6 +720,11 @@ button:disabled {
         resultFadeIn 0.4s ease;
 }
 
+@keyframes popUp {
+    from { opacity: 0; transform: scale(0.9) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
 
 @keyframes resultFadeIn {
 
@@ -744,4 +746,140 @@ button:disabled {
 
     }
 
+}
+
+/* Penambahan styling untuk paragraf konten di modal result */
+.content-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #37474f;
+    text-align: left;
+    white-space: pre-line; /* Mempertahankan format paragraf dari data JSON */
+    margin-bottom: 20px;
+    background: #f8fafc;
+    padding: 16px;
+    border-radius: 12px;
+    border-left: 4px solid #1976d2;
+}
+
+/* Header & Badges */
+.badge {
+    background: #e0f2fe;
+    color: #0284c7;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.35;
+    margin-bottom: 16px;
+}
+
+/* Image Container */
+.media-container img {
+    width: 100%;
+    max-height: 240px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Elements */
+.text-pembuka {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.highlight-box {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    padding: 14px 16px;
+    border-radius: 8px;
+    color: #92400e;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 20px 0 12px;
+}
+
+/* Features Grid (Poin Unik) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.feature-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 14px;
+    border-radius: 12px;
+}
+
+.feature-card h4 {
+    font-size: 14px;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.feature-card p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+/* Custom List */
+.custom-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.custom-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: #334155;
+    margin-bottom: 8px;
+    background: #f1f5f9;
+    padding: 10px 14px;
+    border-radius: 10px;
+}
+
+/* Tombol */
+.btn-primary {
+    width: 100%;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    font-weight: 700;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
 }
