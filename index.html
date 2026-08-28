@@ -2,145 +2,80 @@
 <html lang="id">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>MAPLE</title>
-
-    <!-- MAPLE CSS -->
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAPLE - Math Puzzle Learning Experience</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
     <div class="container">
 
-        <!-- =========================================
-             HEADER
-             ========================================= -->
-
+        <!-- HEADER -->
         <div class="header">
-
             <h1>🧩 MAPLE</h1>
-
-            <p>
-                Math Puzzle Learning Experience
-            </p>
-
+            <p>Math Puzzle Learning Experience</p>
         </div>
 
-
-        <!-- =========================================
-             LEVEL SELECTOR
-             ========================================= -->
-
+        <!-- TRANSPORT SELECTOR -->
         <div class="card">
-
-            <label for="level">
-                Pilih Level
-            </label>
-
-            <select id="level">
-
-                <option value="1">
-                    Level 1
-                </option>
-
-                <option value="2">
-                    Level 2
-                </option>
-
+            <label for="transportType">Pilih Moda Transportasi</label>
+            <select id="transportType" class="select">
+                <option value="wirawiri">Wirawiri</option>
+                <option value="transjatim">Transjatim</option>
+                <option value="suroboyo_bus">Suroboyo Bus</option>
             </select>
-
         </div>
 
-
-        <!-- =========================================
-             SECRET CODE
-             ========================================= -->
-
+        <!-- LEVEL SELECTOR -->
         <div class="card">
+            <label for="level">Pilih Level</label>
+            <select id="level" class="select">
+                <option value="level_1">Level 1</option>
+                <option value="level_2">Level 2</option>
+            </select>
+        </div>
 
-            <label for="secretCode">
-                Secret Code
-            </label>
-
-            <input
-                type="text"
-                id="secretCode"
-                placeholder="Masukkan kode..."
-                autocomplete="off"
-                autocapitalize="characters"
+        <!-- SECRET CODE -->
+        <div class="card">
+            <label for="secretCode">Secret Code</label>
+            <input 
+                type="text" 
+                id="secretCode" 
+                placeholder="Masukkan kode..." 
+                autocomplete="off" 
+                autocapitalize="characters" 
                 spellcheck="false"
             >
-
-            <button id="unlockButton">
-                🔓 UNLOCK
-            </button>
-
+            <button id="unlockButton">🔓 UNLOCK</button>
         </div>
 
-
-        <!-- =========================================
-             MESSAGE / FEEDBACK
-             ========================================= -->
-
+        <!-- MESSAGE / FEEDBACK -->
         <div id="message"></div>
 
-
     </div>
 
-
-    <!-- =============================================
-         RESULT
-         ============================================= -->
-
+    <!-- RESULT MODAL SCREEN -->
     <div id="result">
-
-        <div class="card">
-
-            <div class="success-title">
-                🎉 SELAMAT!
+        <div class="result-dialog">
+            <div class="card-header">
+                <span class="badge">🎉 LEVEL UNLOCKED</span>
+                <h2 id="title"></h2>
             </div>
 
-            <div class="level-message">
-                Level berhasil dibuka
+            <div class="media-container">
+                <img id="image" alt="Gambar Kebudayaan">
             </div>
 
-            <h2 id="title"></h2>
+            <!-- Wadah Dinamis dari JS -->
+            <div id="dynamicContent" class="content-body"></div>
 
-            <p id="subtitle"></p>
-
-            <img
-                id="image"
-                alt="Gambar budaya"
-            >
-
-            <button id="nextButton">
-                ➡ NEXT LEVEL
-            </button>
-
+            <button id="nextButton" class="btn-primary">➡ NEXT LEVEL</button>
         </div>
-
     </div>
 
-
-    <!-- MAPLE JAVASCRIPT -->
-    <script
-        src="script.js"
-        defer
-    ></script>
-
+    <script src="script.js" defer></script>
 </body>
 
 </html>
